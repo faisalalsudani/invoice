@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { PureComponent, PropTypes } from 'react'
+import { connect } from 'react-redux'
 import Contact from './Contact'
 import data from './data'
 import './Layout.css'
@@ -59,4 +60,8 @@ import './Layout.css'
    }
  }
 
- export default Layout
+ const mapStateToProps = ({ contacts }) => ({
+  contacts
+})
+
+ export default connect(mapStateToProps)(Layout)
